@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spirit Form Starter Pack</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#000814,#001d6e,#000);
+color:#fff;
+padding:20px;
+}
+.container{max-width:1000px;margin:auto;}
+.card{
+background:rgba(0,0,0,.85);
+border:2px solid #d4af37;
+border-radius:24px;
+padding:30px;
+box-shadow:0 0 25px rgba(212,175,55,.35);
+}
+h1{text-align:center;color:#d4af37;font-size:3rem;margin-bottom:10px;}
+.sub{text-align:center;color:#ddd;margin-bottom:30px;}
+.prompt{
+background:#0a0a0a;
+border:1px solid rgba(212,175,55,.4);
+border-radius:16px;
+padding:18px;
+margin-bottom:18px;
+}
+.prompt h3{color:#d4af37;margin-top:0;}
+button{
+background:linear-gradient(135deg,#d4af37,#f7d77a);
+color:#000;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+.upsell{
+margin-top:35px;
+padding:25px;
+border-radius:18px;
+background:rgba(212,175,55,.08);
+border:1px solid rgba(212,175,55,.35);
+text-align:center;
+}
+.upgrade,.browse{
+display:inline-block;
+margin:10px;
+padding:14px 22px;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+}
+.upgrade{background:#d4af37;color:#000;}
+.browse{background:#0b2cff;color:#fff;}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<h1>✨ Spirit Form Starter Pack ✨</h1>
+<p class="sub">10 Ready-To-Use Spirit Form Transformation Prompts</p>
+
+<div id="prompts"></div>
+
+<div class="upsell">
+<h2>✨ Ready For The Full Transformation Experience?</h2>
+<p>The Starter Pack gives you a taste. The full Spirit Form Metamorphosis Generator unlocks advanced storytelling, spirit forms, transformation mechanics, healing journeys, symbolism, emotions, environments, and premium customization.</p>
+<a href="YOUR-FULL-GENERATOR-LINK" class="upgrade">✨ UNLOCK THE FULL GENERATOR ✨</a>
+<a href="YOUR-STORE-LINK" class="browse">💎 BROWSE MORE TOOLS</a>
+</div>
+</div>
+</div>
+
+<script>
+const prompts=[
+"Create a surreal spiritual transformation artwork where self-doubt transforms into confidence through the spirit form of a Wolf. Set within a moonlit forest sanctuary.",
+"Create a surreal spiritual transformation artwork where anxiety transforms into peace through the spirit form of a Butterfly. Set within a healing garden.",
+"Create a surreal spiritual transformation artwork where burnout transforms into renewal through the spirit form of an Owl. Set within a waterfall sanctuary.",
+"Create a surreal spiritual transformation artwork where heartbreak transforms into healing through the spirit form of a Dove. Set upon a peaceful beach.",
+"Create a surreal spiritual transformation artwork where rejection transforms into self-worth through the spirit form of a Tiger. Set upon a mountain peak.",
+"Create a surreal spiritual transformation artwork where grief transforms into hope through the spirit form of a Swan. Set beside a golden lake.",
+"Create a surreal spiritual transformation artwork where loneliness transforms into connection through the spirit form of a Fox. Set within enchanted woods.",
+"Create a surreal spiritual transformation artwork where fear transforms into courage through the spirit form of an Eagle. Set within a celestial sky realm.",
+"Create a surreal spiritual transformation artwork where betrayal transforms into strength through the spirit form of a Panther. Set within a crystal cave.",
+"Create a surreal spiritual transformation artwork where overthinking transforms into clarity through the spirit form of a Sea Turtle. Set within an ocean sanctuary."
+];
+
+const wrap=document.getElementById('prompts');
+prompts.forEach((p,i)=>{
+const div=document.createElement('div');
+div.className='prompt';
+div.innerHTML=`<h3>Prompt ${i+1}</h3><p id="p${i}">${p}</p><button onclick="copyPrompt(${i})">📋 Copy Prompt</button>`;
+wrap.appendChild(div);
+});
+
+function copyPrompt(i){
+navigator.clipboard.writeText(document.getElementById('p'+i).innerText);
+alert('Prompt Copied!');
+}
+</script>
+</body>
+</html>
